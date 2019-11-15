@@ -1,0 +1,32 @@
+<!-- 
+  <h2>根组件</h2>
+  <hr>
+  路由出口：路由组件的挂载点
+  <router-outlet></router-outlet> 
+-->
+<ion-app>
+  <!-- 路由组件的挂载点——路由出口 -->
+  <ion-router-outlet></ion-router-outlet>
+
+  <!-- 固定不变的标签页组件 -->
+  <ion-tabs>
+    <ion-tab-bar>
+      <ion-tab-button tab="index"> <!--显示首页组件-->
+        <ion-icon name="home"></ion-icon>
+        <ion-label>首页</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="productlist"> <!--显示商品列表组件-->
+        <ion-icon name="list"></ion-icon>
+        <ion-label>商品</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="cart"><!--显示购物车组件-->
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>购物车</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="userlogin"><!--显示用户登录组件-->
+        <ion-icon name="person"></ion-icon>
+        <ion-label>登录</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

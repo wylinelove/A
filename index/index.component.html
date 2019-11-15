@@ -1,0 +1,68 @@
+<!-- 页头 -->
+<ion-header>
+  <ion-toolbar>
+    <img slot="start" src="../../assets/logo.png">
+    <ion-searchbar placeholder="商品搜索"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<!-- 主体 -->
+<ion-content>
+  <!-- 轮播广告 -->
+  <ion-slides pager="true"  #mySlides>
+    <ion-slide *ngFor="let c of carouselItems">
+      <img [src]="url.server + c.img">
+    </ion-slide>
+  </ion-slides>
+  
+  <!-- 1F商品：首页推荐 -->
+  <ion-item>
+    <img slot="start" src="../../assets/computer_icon.png">
+    <ion-label>首页推荐 / 1F</ion-label>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let p of recommendedItems" size="6">
+        <ion-card>
+          <img [src]="url.server + p.pic">
+          <ion-card-header>
+            <ion-card-title>{{p.title}}</ion-card-title>
+            <ion-card-subtitle>{{p.details}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text color="primary">{{p.price | currency:'￥'}}</ion-text>
+            <ion-button size="small">查看详情</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- 2F商品：最新上架    -->
+  <!-- 3F商品：热销单品 -->
+  <!-- 底部四个图标 -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon1.png">
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon2.png">
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon3.png">
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon4.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
